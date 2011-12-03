@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Category Name:</b>
+  <%= @item.category_cname %>
+</p>
+
+
+<p>
+  <b>Item name:</b>
+  <%= @item.item_name %>
+</p>
+
+<p>
+  <b>Item desc:</b>
+  <%= @item.item_desc %>
+</p>
+
+<p>
+  <b>Item price:</b>
+  <%= @item.item_price %>
+</p>
+
+<p>
+  <b>Item cond:</b>
+  <%= @item.item_cond %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @item.user_devises_id %>
+</p>
+
+<%= image_tag @item.photo.url(:thumb) %>
+
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

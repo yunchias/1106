@@ -1,0 +1,31 @@
+<div id="cellphone_list" >
+<h1>Welcome to the hub of cellphones!</h1>
+
+<table>
+
+<% @items.each do |item| %>
+ <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
+
+
+  <td class="list_description" >
+  <dl>
+  <dt><%= item.item_name %></dt>
+  <dd><%= truncate(strip_tags(item.item_desc),
+  :length => 80) %></dd>
+
+  <dt><%= item.item_price %></dt>
+  <dt><%= item.item_cond %></dt>
+  </dl>
+</td>
+
+<td class="list_actions" >
+<%= button_to 'Place Bid' %><br/>
+</td>
+
+
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+<%= link_to 'New Item', new_item_path %>

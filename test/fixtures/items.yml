@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  item_name: MyString
+  item_desc: MyString
+  item_price: 9.99
+  item_cond: MyString
+  user_id: 1
+
+two:
+  item_name: MyString
+  item_desc: MyString
+  item_price: 9.99
+  item_cond: MyString
+  user_id: 1

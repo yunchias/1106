@@ -1,0 +1,23 @@
+<% if notice %>
+<p id="notice" ><%= notice %></p>
+<% end %>
+<h1>Your bidding page</h1>
+<% @items.each do |item| %>
+<div class="entry" >
+<%= image_tag(item.photo) %>
+<h3><%= item.item_name %></h3>
+<%=sanitize item.item_desc %>
+<div class="price_line" >
+<span class="price" ><%= number_to_currency(item.item_price) %></span>
+
+  <%= form_for :bid do |f| %>
+
+  <div class="field"><font size="5" face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><%= f.text_field  :item_price %><br /></div>
+
+   <% end %>
+  <%= button_to 'Place Bid', line_items_path(:item_id => item) %>
+
+</div>
+</div>
+<% end %>
+

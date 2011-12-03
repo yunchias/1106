@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  street: MyText
+  city: MyString
+  state: MyString
+  country: MyString
+  zipcode: 9.99
+  phone_number: MyString
+  dob: MyString
+  email: MyString
+  r_email: MyString
+  username: MyString
+  password: MyString
+  r_password: MyString
+  secret_q: MyString
+  secret_a: MyString
+
+two:
+  title: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  street: MyText
+  city: MyString
+  state: MyString
+  country: MyString
+  zipcode: 9.99
+  phone_number: MyString
+  dob: MyString
+  email: MyString
+  r_email: MyString
+  username: MyString
+  password: MyString
+  r_password: MyString
+  secret_q: MyString
+  secret_a: MyString

@@ -1,0 +1,50 @@
+<div id="item_list" >
+<h1>Listing items</h1>
+
+<table>
+
+<% @items.each do |item| %>
+ <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
+
+  <td class="list_description" >
+  <dl>
+  <dt><%= item.item_name %></dt>
+  <dd><%= truncate(strip_tags(item.item_desc),
+  :length => 80) %></dd>
+
+  <dt><%= item.item_price %></dt>
+  <dt><%= item.item_cond %></dt>
+  </dl>
+</td>
+
+  <td class="list_actions" >
+<%= link_to 'Show', item %><br/>
+<%= link_to 'Edit', edit_item_path(item) %><br/>
+<%= link_to 'Delete', item,
+:confirm => 'Are you sure?',
+:method => :delete %>
+</td>
+
+
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+<%= link_to 'New Item', new_item_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<div class="success message">
+         <h3>Congrats, you did it!</h3>
+         <p>This is just a success notification message.</p>
+
+</div>
+
+
+<h1>Editing item</h1>
+
+<%= form_for @item, { :multipart => true} do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Item name:</b>
+  <%= @item.item_name %>
+</p>
+
+<p>
+  <b>Item desc:</b>
+  <%= @item.item_desc %>
+</p>
+
+<p>
+  <b>Item price:</b>
+  <%= @item.item_price %>
+</p>
+
+<p>
+  <b>Item cond:</b>
+  <%= @item.item_cond %>
+</p>
+
+
+
+<%= image_tag @item.photo.url(:thumb) %>
+
+   <p>
+
+
+      <%= f.label :item_price %>
+      <%= f.text_field :item_price %>
+
+    </p>
+
+    <ul id ="trigger-list">
+    <%= f.submit "Bid", {:class => "trigger success-trigger"} %>  </ul>
+
+   <% end %>
+
+
+<%= link_to 'Show', @item %> |
+<%= link_to 'Back', items_path %>

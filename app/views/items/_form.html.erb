@@ -1,0 +1,54 @@
+
+
+
+<%= form_for @item, { :multipart => true} do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+    <div class="field"><%= f.label :Category, {:style=>"font-size:150%;",:class => "css_class"} %>
+   <%= f.select  :category_cname, ['Cellular Phones', 'Laptops', 'Television'] %><br /></div>
+
+
+  <div class="field">
+    <%= f.label :item_name %><br />
+    <%= f.text_field :item_name %>
+  </div>
+  <div class="field">
+    <%= f.label :item_desc %><br />
+    <%= f.text_field :item_desc %>
+  </div>
+  <div class="field">
+    <%= f.label :item_price %><br />
+    <%= f.text_field :item_price %>
+  </div>
+  <div class="field">
+    <%= f.label :item_cond %><br />
+    <%= f.text_field :item_cond %>
+  </div>
+  <div class="field">
+    <%= f.label :user_devises_id %><br />
+    <%= f.number_field :user_devises_id %>
+  </div>
+
+    <div class="field">
+	<%= f.file_field :photo %>
+  </div>
+
+     <ul id ="trigger-list">
+    <%= f.submit "Create your Item", {:class => "trigger success-trigger"} %>  </ul>
+  </div>
+
+
+<% end %>

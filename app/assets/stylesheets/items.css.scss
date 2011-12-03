@@ -1,0 +1,46 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#item_list table {
+        border-collapse: collapse;
+}
+
+#item_list table tr td {
+        padding-right: 500px;
+        vertical-align: top;
+}
+
+
+
+#item_list .list_description {
+  width:        60%;
+}
+
+#item_list .list_description dl {
+        margin: 0;
+}
+
+#item_list .list_description dt {
+	color:        #244;
+	font-weight:  bold;
+	font-size:    larger;
+}
+
+#item_list .list_description dd {
+        margin: 0;
+}
+
+#item_list .list_actions {
+  font-size:    x-small;
+  text-align:   right;
+  padding-left: 1em;
+}
+
+#item_list .list_line_even {
+  background:   #e0f8f8;
+}
+
+#item_list .list_line_odd {
+  background:   #f8b0f8;
+}

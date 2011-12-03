@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bestbay</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "scaffolds" %>
+  <%= stylesheet_link_tag "sytle" %>
+  <%= stylesheet_link_tag "nivo-slider" %>
+  <%= stylesheet_link_tag "default" %>
+  <%= stylesheet_link_tag "jquery.tzineClock" %>
+  <%= javascript_include_tag "menu.js" %>
+  <%= javascript_include_tag "script.js" %>
+  <%= javascript_include_tag "jquery.tzineClock.js" %>
+  <%= javascript_include_tag "jquery-1.6.1.min.js" %>
+  <%= javascript_include_tag "jquery.nivo.slider.js" %>
+  <%= javascript_include_tag "jquery.nivo.slider.pack.js" %>
+  <%= javascript_include_tag "noti.js" %>
+  <%= csrf_meta_tags %>
+   <%= yield(:head) %>
+</head>
+
+
+<div id="container">
+    <div id="user_nav">
+      <% if user_devise_signed_in? %>
+      Signed in as <%= current_user_devise.email %>. Not you?
+          <%= link_to "sign out", destroy_user_devise_session_path, :method => 'delete' %>
+
+
+          <% end %>
+    </div>
+    <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+     <% end %>
+
+
+  <%= yield %>
+      </div>
+
+
+<body>
+
+  </body>
+  </html>

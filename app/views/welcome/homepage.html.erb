@@ -1,0 +1,209 @@
+<html>
+
+<title>You are at the Home Page of the BestBay System</title>
+<body>
+
+ <br /> <br />
+
+
+
+<div id="main">
+<h1>Best Bay</h1></div>
+
+<div id="container">
+    <div id="user_nav">
+      <% if user_devise_signed_in? %>
+
+
+      <p>
+        <%if current_user_devise.user_status == "A" && current_user_devise.purpose == "Selling" %>
+        <br><b> <%= link_to "Want to post ?", :controller => "items", :action => "new" %> </b><br>
+        <%end%>
+
+        <%if current_user_devise.user_status == "D" && current_user_devise.purpose == "Selling" %>
+        <b><font face="Arial" color="#FF0606" size="100"> WARNING !!! </font></b><br>
+        <b><font face="Arial" color="#FF0606" size="100">Your account has been deactivated for posting since you have posted illegal item!</font></b><br>
+        <%end%>
+
+        <%if current_user_devise.user_status == "D" && current_user_devise.purpose == "Bidding" %>
+        <b><font face="Arial" color="#FF0606" size="100"> WARNING !!! </font></b><br>
+        <b><font face="Arial" color="#FF0606" size="100">Your account has been deactivated for bidding since you have carried out illegal bid activity!</font></b><br>
+        <%end%>
+
+      <% else %>
+         <br><%= link_to "Register", new_user_devise_registration_path,  {:style=>"font-size:200%;",  :align => 'absmiddle',:class => "css_class"} %> or <%= link_to "Login", new_user_devise_session_path, {:style=>"font-size:200%;", :class => "css_class"} %><br>
+      <% end %>
+      <br>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="menu">
+    <ul class="menu">
+        <li><a href="#" class="parent"><span>Home</span></a>
+            <ul>
+                <li><a href="#" class="parent"><span>Sub Item 1</span></a>
+                    <ul>
+                        <li><a href="#" class="parent"><span>Sub Item 1.1</span></a>
+                            <ul>
+                                <li><a href="#"><span>Sub Item 1.1.1</span></a></li>
+                                <li><a href="#"><span>Sub Item 1.1.2</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span>Sub Item 1.2</span></a></li>
+                        <li><a href="#"><span>Sub Item 1.3</span></a></li>
+                        <li><a href="#"><span>Sub Item 1.4</span></a></li>
+                        <li><a href="#"><span>Sub Item 1.5</span></a></li>
+                        <li><a href="#"><span>Sub Item 1.6</span></a></li>
+                        <li><a href="#" class="parent"><span>Sub Item 1.7</span></a>
+                            <ul>
+                                <li><a href="#"><span>Sub Item 1.7.1</span></a></li>
+                                <li><a href="#"><span>Sub Item 1.7.2</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#"><span>Sub Item 2</span></a></li>
+                <li><a href="#"><span>Sub Item 3</span></a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="parent"><span>All Categories</span></a>
+            <ul>
+                <li><%= link_to "Electronics", :controller => "items", :action => "electronics" %>
+                    <ul>
+                        <li><%= link_to "Cellular Phone", :controller => "items", :action => "cellphone" %></li>
+                        <li><%= link_to "Laptops", :controller => "items", :action => "laptop" %></li>
+                        <li><%= link_to "Television", :controller => "items", :action => "television" %></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="parent"><span>Books</span></a>
+                    <ul>
+                        <li><a href="#"><span>Fiction</span></a></li>
+                        <li><a href="#"><span>Sci-fi</span></a></li>
+                        <li><a href="#"><span>Autobiography</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#"class="parent"><span>Sporting Goods</span></a>
+                    <ul>
+                        <li><a href="#"><span>Tennis</span></a></li>
+                        <li><a href="#"><span>Football</span></a></li>
+                        <li><a href="#"><span>Soccer</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#"class="parent"><span>Home Outdoor Decoration</span></a>
+                  <ul>
+                        <li><a href="#"><span>Lighting</span></a></li>
+                        <li><a href="#"><span>Garden Statue</span></a></li>
+                        <li><a href="#"><span>Lawn Sculptures</span></a></li>
+                  </ul>
+                </li>
+                <li><a href="#"class="parent"><span>Motors</span></a>
+                    <ul>
+                        <li><a href="#"><span>Car</span></a></li>
+                        <li><a href="#"><span>Bikes</span></a></li>
+                        <li><a href="#"><span>Cycles</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#"class="parent"><span>Fashion</span></a>
+                    <ul>
+                        <li><a href="#"><span>Jewelery</span></a></li>
+                        <li><a href="#"><span>Perfumes</span></a></li>
+                        <li><a href="#"><span>Bangles</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#"class="parent"><span>Movies & Music</span></a>
+                    <ul>
+                        <li><a href="#"><span>DVD</span></a></li>
+                        <li><a href="#"><span>CD</span></a></li>
+                        <li><a href="#"><span>VCD</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#"class="parent"><span>Arts</span></a>
+                    <ul>
+                        <li><a href="#"><span>Photo Frame</span></a></li>
+                        <li><a href="#"><span>Crystals</span></a></li>
+                        <li><a href="#"><span>Flowers</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#"class="parent"><span>Accessories</span></a>
+                    <ul>
+                        <li><a href="#"><span>Screwdrivers</span></a></li>
+                        <li><a href="#"><span>Gloves</span></a></li>
+                        <li><a href="#"><span>Attire</span></a></li>
+                   </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#"><span>Help</span></a></li>
+        <li class="last"><a href="#"><span>Contacts</span></a></li>
+    </ul>
+</>
+
+<table border ="1" align="center" width="100%" height="1000">
+
+
+
+
+
+
+
+<tr>
+  <td>
+
+
+    <div id="wrapper">
+
+
+          <div class="slider-wrapper theme-default">
+              <div class="ribbon"></div>
+              <div id="slider" class="nivoSlider">
+                  <img src="assets/toystory.jpg" alt="" />
+                  <%= link_to "Place Bid", :controller => "welcome", :action => "FAQ" %><img src="assets/up.jpg" alt="" title="This is an example of a caption" /></a>
+                  <img src="assets/walle.jpg" alt="" />
+                  <img src="assets/nemo.jpg" alt="" title="#htmlcaption" />
+              </div>
+              <div id="htmlcaption" class="nivo-html-caption">
+                  <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
+
+              </div>
+          </div>
+
+      </div>
+
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+
+
+  </td>
+ </tr>
+</table>
+
+<p align="center">
+<b><font size="5"><%= link_to "FAQ", :controller => "welcome", :action => "FAQ" %></font></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><font size="5"><%= link_to "Return Policy and Refund", :action => "returnpolicy"%></font></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><font size="5"><%= link_to "Order Status", :action => "orderstatus" %></font></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><font size="5"><%= link_to "Feedback", :action => "feedback"  %></font></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><font size="5"><%= link_to "Services and Support", :action => "services" %></font></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><font size="5"><%= link_to "Connect with us", :action => "connect"%></font></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+
+</body>
+</html>
